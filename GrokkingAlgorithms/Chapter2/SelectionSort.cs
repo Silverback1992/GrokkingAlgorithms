@@ -2,35 +2,29 @@
 
 public static class SelectionSort
 {
-    public static int[] Sort(int[] arr)
+    public static void Sort(int[] arr)
     {
-        int[] sort = new int[arr.Length];
-        var copied = new List<int>(arr);
-
-        for (int i = 0; i < arr.Length; i++)
+        for (int i = 0; i < arr.Length - 1; i++)
         {
-            int smallestIndex = FindSmallestIndex(copied);
-            sort[i] = copied[smallestIndex];
-            copied.RemoveAt(smallestIndex);
-        }
+            int minIndex = i;
 
-        return sort;
-    }
-
-    private static int FindSmallestIndex(List<int> list)
-    {
-        int smallestValue = list[0];
-        int smallestIndex = 0;
-
-        for (int i = 1; i < list.Count; i++)
-        {
-            if (list[i] < smallestValue)
+            for (int j = i + 1; j < arr.Length; j++)
             {
-                smallestValue = list[i];
-                smallestIndex = i;
+                if (arr[j] < arr[minIndex])
+                {
+                    minIndex = j;
+                }
+            }
+
+            if (minIndex != i)
+            {
+                Swap(ref arr[i], ref arr[minIndex]);
             }
         }
+    }
 
-        return smallestIndex;
+    private static void Swap(ref int a, ref int b)
+    {
+        (b, a) = (a, b);
     }
 }
