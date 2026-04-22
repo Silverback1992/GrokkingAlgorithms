@@ -1,6 +1,6 @@
 ﻿namespace GrokkingAlgorithms.Chapter4;
 
-public static class QuicksortVariations
+public static class Quicksort
 {
     // A shared helper method for all three algorithms
     private static void Swap(int[] arr, int i, int j)

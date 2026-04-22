@@ -99,26 +99,48 @@ Console.WriteLine("Recursion without base case:");
 Console.WriteLine("Factorial:");
 Console.WriteLine(Recursion.Factorial(5));
 
+Console.WriteLine();
+
 #endregion
 
 #region Chapter 4
 
 Console.WriteLine("Chapter 4");
 
-Console.WriteLine("Quicksort test:");
+Console.WriteLine("D&C test:");
+
+Console.WriteLine(DivideAndConquer.SumArray([2, 4, 6]));
+
+Console.WriteLine();
+
+Console.WriteLine("Quicksort naive test:");
+var myArray = new int[] { 64, 25, 12, 22, 11 };
+var sortedArray = QuicksortNaive.Sort(myArray);
+Console.WriteLine(string.Join(", ", sortedArray));
+
+Console.WriteLine();
+
+Console.WriteLine("Quicksort test Lomuto:");
 
 var exampleArr3 = new int[] { 64, 25, 12, 22, 11 };
-QuicksortVariations.SortHoare(exampleArr3);
+Quicksort.SortLomuto(exampleArr3);
 Console.WriteLine(string.Join(", ", exampleArr3));
 
-//var myList2 = new List<int> { 64, 25, 12, 22, 11 };
-//var sortedList = Quicksort.SortWithPivotAlwaysAtIndexZero(myList2);
-//Console.WriteLine(string.Join(", ", sortedList));
-//var sortedList2 = Quicksort.Sort(myList2);
-//Console.WriteLine(string.Join(", ", sortedList2));
-//var arr = new int[] { 64, 25, 12, 22, 11 };
-//QuicksortInPlace.Sort(arr);
-//Console.WriteLine(string.Join(", ", arr));
+Console.WriteLine();
+
+Console.WriteLine("Quicksort test Hoare:");
+
+var exampleArr4 = new int[] { 64, 25, 12, 22, 11 };
+Quicksort.SortHoare(exampleArr4);
+Console.WriteLine(string.Join(", ", exampleArr4));
+
+Console.WriteLine();
+
+Console.WriteLine("Quicksort test Hybrid/Sedgewick:");
+
+var exampleArr5 = new int[] { 64, 25, 12, 22, 11 };
+Quicksort.SortHybrid(exampleArr5);
+Console.WriteLine(string.Join(", ", exampleArr5));
 
 Console.WriteLine();
 
